@@ -1,0 +1,105 @@
+package objectRepo;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.TreeSet;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
+import org.openqa.selenium.support.PageFactory;
+import org.samyak.com.generaicLib.BaseClass;
+
+public class Home {
+
+	WebDriver  driver;
+
+	public Home(){
+		PageFactory.initElements(BaseClass.driver, this);
+	}
+
+	@FindBy(xpath = "//a[text()='Search']")
+	private WebElement search;
+
+	@FindBy(xpath = "//span[@xpath = '1']")
+	private WebElement stops;
+
+	@FindBy(xpath = "//div[@id = 'departure_group']//span[text()='12 Noon-6PM']")
+	private WebElement departFromND;
+
+	@FindBy(xpath= "//div[@id='arrival_group']//span[4]//label[1]//span[1]//span[1]")
+	private WebElement arrivalBng;
+
+	@FindBy(xpath= "//span[contains(@class,'labeltext')][contains(text(),'Air India')]")
+	private WebElement airline;
+
+	@FindBy(xpath = "//span[contains(@class,'actual-price')]")
+	private List<WebElement> lst;
+
+	public WebElement getSearch() {
+		return search;
+	}
+
+	public WebElement getStops() {
+		return stops;
+	}
+
+	public WebElement getDepartFromND() {
+		return departFromND;
+	}
+
+	public WebElement getArrivalBng() {
+		return arrivalBng;
+	}
+
+	public WebElement getAirline() {
+		return airline;
+	}
+
+
+	public void selectLowestPriceFlight() throws InterruptedException {
+
+		search.click();
+		Thread.sleep(3000);
+		departFromND.click();
+		arrivalBng.click();
+		airline.click();
+
+		ArrayList<String> list = new ArrayList<String>();
+		for(WebElement wb:lst){
+			String str = wb.getText();
+			//System.out.println("prict is .... "+str);
+
+			list.add(str);
+		}
+
+		System.out.println("lsi ..... " + list);	
+		
+		Collections.sort(list);
+		System.out.println("....................: "+list);
+		TreeSet<String> t = new TreeSet<String>();
+		t.addAll(list);
+		System.out.println("sorting ....... : "+t);
+
+		TreeSet<String> t1 = new TreeSet<String>();
+		t1.add("? 1");
+		t1.add("? 2");
+		t1.add("? 5");
+		t1.add("? 3");
+		t1.add("? 8");
+		t1.add("? 9");
+		t1.add("? 4");
+		
+		System.out.println(t1);
+
+	}
+
+
+
+
+
+
+}

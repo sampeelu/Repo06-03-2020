@@ -1,0 +1,35 @@
+import java.io.File;
+
+public class FolderCreation {
+
+	public static void main(String[] args) {
+
+		//foldercreation();
+	}
+	
+	/**
+	 * folder creation
+	 */
+	public static void foldercreation(){
+		File f = new File("F:\\EclipseOxygen\\TestJava\\fileFolder");
+		if(f.exists())
+			System.out.println("file already created");
+		else {
+			f.mkdir();
+		System.out.println("file created ");
+		}
+			
+		}
+	
+	/**
+	 * file creation
+	 */
+	public static void fileCreation("F:\\EclipseOxygen\\TestJava\\fileFolder\\createFile"){
+		File f = new File()
+	}
+	
+	
+	}
+	
+
+

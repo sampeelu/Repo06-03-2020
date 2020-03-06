@@ -1,0 +1,72 @@
+
+public class Fabonacies {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//fabo(10);
+
+		fib(5);
+		//fabseries(10);
+	}
+	/**
+	 * 1st methods
+	 * @param n
+	 */
+	public static void fabo(int n) {
+		int a = 0, b =1,c;
+
+		for(int i=0;i<=n;i++){
+			c = a+b;
+			a=b;
+			b=c;
+
+			System.out.print(a+" ");
+		}
+
+	}
+
+	/**
+	 * 2nd method
+	 * @param n
+	 */
+	static void fib(int n) 
+	{ 
+
+		int a = 0, b = 1, c, i; 
+
+		if (n <= 1) 
+			System.out.print(a + " "); 
+		else { 
+
+			System.out.print(a + " " + b + " "); 
+
+			for (i = 3; i <= n; i++) { 
+				c = a + b; 
+				a = b; 
+				b = c; 
+
+				System.out.print(c + " "); 
+			} 
+
+		} 
+	} 
+
+	/**
+	 * fabonacies series practise
+	 */
+
+	public static void fabseries(int n) {
+		int a=0,b=1,c;
+		if(n<=1)
+			System.out.print(a+" ");
+		else
+			System.out.print(a+" "+b+" ");
+		for(int i=3;i<=n;i++){
+			c = a+b;
+			a = b;
+			b = c;
+			System.out.print(c+" ");
+		}
+
+	}
+}

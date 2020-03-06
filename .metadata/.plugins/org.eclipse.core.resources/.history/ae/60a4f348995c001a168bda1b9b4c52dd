@@ -1,0 +1,15 @@
+import java.util.HashMap;
+
+public class StringExam {
+
+	public static void main(String[] args) {
+
+	}
+	
+	public static void stroutputchange(String str){
+		
+		HashMap<Character,Integer> map =  new HashMap<>();
+		char [] arr = str.toCharArray();
+	}
+
+}

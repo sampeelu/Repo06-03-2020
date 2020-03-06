@@ -1,0 +1,20 @@
+package org.samyak.restAssuredSample;
+
+import java.util.Map;
+
+import io.restassured.RestAssured;
+import io.restassured.specification.RequestSpecification;
+
+public class GeneralUtility {
+	
+	public  Response executeGET(Map<String , String> headerMap ,
+			Map<String , String> queryParamMap,
+			String endPoint) {
+		
+		RequestSpecification res = RestAssured.given();
+		
+		
+		
+	}
+
+}

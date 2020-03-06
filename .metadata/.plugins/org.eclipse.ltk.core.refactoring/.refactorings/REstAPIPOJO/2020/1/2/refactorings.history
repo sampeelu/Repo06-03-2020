@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;newPackage.UpdateEmployeeTest&apos; to &apos;UpdateEmployeeApiTest&apos;&#x0D;&#x0A;- Original project: &apos;REstAPIPOJO&apos;&#x0D;&#x0A;- Original element: &apos;newPackage.UpdateEmployeeTest&apos;&#x0D;&#x0A;- Renamed element: &apos;newPackage.UpdateEmployeeApiTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Rename similarly named elements&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;UpdateEmployeeTest&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/test\/java&lt;newPackage{UpdateEmployeeTest.java[UpdateEmployeeTest" matchStrategy="1" name="UpdateEmployeeApiTest" qualified="false" references="true" similarDeclarations="true" stamp="1578223979491" textual="false" version="1.0"/>
+</session>

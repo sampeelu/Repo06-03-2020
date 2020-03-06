@@ -1,0 +1,35 @@
+package objectRepository;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.samyak.com.generaicLib.BaseClass;
+import org.samyak.com.generaicLib.GeneralClass;
+
+public class SortBy {
+	LoginPage lp ;
+	@FindBy(xpath = "//span[text()='Electronics']")
+	public WebElement electronics;
+	
+	@FindBy(partialLinkText = "Screenguards")
+	public WebElement screengaurd;
+
+	public WebElement getElectronics() {
+		return electronics;
+		
+	}
+	
+	public SortBy(){
+		lp = PageFactory.initElements(BaseClass.driver,LoginPage.class);
+		PageFactory.initElements(BaseClass.driver,this);
+	}
+	
+	public void clickonScreenGaurdsSortBy(){
+		lp.loginflipkart();
+		electronics.click();
+		
+		screengaurd.click();
+		
+	}
+
+}

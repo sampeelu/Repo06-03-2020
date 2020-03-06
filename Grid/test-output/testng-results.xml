@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="9216" started-at="2019-12-08T11:55:18Z" finished-at="2019-12-08T11:55:27Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="9216" started-at="2019-12-08T11:55:18Z" finished-at="2019-12-08T11:55:27Z">
+      <class name="org.samyak.Grid.App">
+        <test-method status="PASS" signature="registeredUser()[pri:1, instance:org.samyak.Grid.App@6ea6d14e]" name="registeredUser" duration-ms="4017" started-at="2019-12-08T17:25:18Z" finished-at="2019-12-08T17:25:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registeredUser -->
+        <test-method status="PASS" signature="loginUser()[pri:2, instance:org.samyak.Grid.App@6ea6d14e]" name="loginUser" duration-ms="2519" started-at="2019-12-08T17:25:22Z" finished-at="2019-12-08T17:25:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginUser -->
+        <test-method status="PASS" signature="updateUser()[pri:3, instance:org.samyak.Grid.App@6ea6d14e]" name="updateUser" duration-ms="2651" started-at="2019-12-08T17:25:25Z" finished-at="2019-12-08T17:25:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateUser -->
+      </class> <!-- org.samyak.Grid.App -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

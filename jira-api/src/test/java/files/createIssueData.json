@@ -1,0 +1,13 @@
+{
+    
+    "fields": {
+        "project": {
+            "key": "RES"
+        },
+        "summary": "creating comment by retassured",
+        "description": "description",
+        "issuetype":{
+        	"name": "Bug"
+        }
+    }
+}

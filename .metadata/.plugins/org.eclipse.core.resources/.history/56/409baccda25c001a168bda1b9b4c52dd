@@ -1,0 +1,45 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class StringExam {
+
+	public static void main(String[] args) {
+		//stroutputchange("aabacdddefggh");
+		test("ssaamyak");
+	}
+	public static void stroutputchange(String str){
+		Map<Character,Integer> m =  new HashMap<Character,Integer>();
+		int count =1;
+		char []arr = str.toCharArray();
+		for(int i=0; i <=arr.length-1; i++){
+			if(m.containsKey(arr[i]))
+				m.put(arr[count++],m.get(arr[i])+1);
+			else
+				m.put(arr[i],1);
+				//m.put(arr[count++],1);
+		}
+		System.out.println(m);
+		System.out.println("...........................");
+		
+		
+	}
+	
+	
+	public static void test(String input){
+		for(int i=0;i<input.length();i++){
+			System.out.print(input.charAt(i));
+			int count=1;
+			for(int j=i+1;j<input.length();j++){
+				if(input.charAt(i)==input.charAt(j)){
+					count++;
+					System.out.print(input.charAt(i));
+				}
+			}
+			System.out.print(count);
+			if((input.charAt(Math.abs(i-1))==input.charAt(i))&&i!=0){
+				continue;
+			}
+		}
+	}
+
+}

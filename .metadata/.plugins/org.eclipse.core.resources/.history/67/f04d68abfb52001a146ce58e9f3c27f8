@@ -1,0 +1,59 @@
+
+public class SumOfPrimeNumbers {
+
+
+	public static void main(String args[]){
+		/*	SumOfPrimeNumbers primeNumberSum = new SumOfPrimeNumbers();
+		        System.out.println(primeNumberSum.sum(1000));*/
+
+		primeNum(3);
+
+	}
+
+	public long sum(int limit){
+		int number = 2;
+		int count = 0;
+		long sum = 0;
+		while(count < limit){
+			if(isPrimeNumber(number)){
+				sum += number;
+				count++;
+			}
+			number++;
+		}
+		return sum;
+	}
+
+	private boolean isPrimeNumber(int number){
+
+		for(int i=2; i<=number/2; i++){
+			if(number % i == 0){
+				return false;
+			}
+		}
+		return true;
+	}
+
+
+	public static boolean primeNum(int n) {
+		int count=0;
+		for(int i=1;i<=n;i++){
+			if(n%i==0)
+				count++;
+		}
+		if(count==2)
+			return true;
+		return false;
+	}
+
+	public static long sumOfPM(int limit) {
+		int number = 2;
+		int count = 0;
+		long sum = 0;
+
+
+	}
+
+}
+
+

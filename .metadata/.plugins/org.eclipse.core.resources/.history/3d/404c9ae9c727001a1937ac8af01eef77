@@ -1,0 +1,48 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.google.gson.JsonObject;
+
+import Apiconstants.Constants;
+import httpMethods.PostMethod;
+import io.restassured.response.Response;
+
+public class ExecutePost extends Constants{
+	FileReader f;
+	JSONParser parser = new JSONParser();
+	final String filepath = "F:\\EclipseOxygen\\REstAPIPOJO\\src\\test\\java\\ExecutePost.java";
+	@DataProvider
+	public Object[][] getData(){
+		return new Object[][]{
+			{"test2","123","23"},
+			{"test3","124","24"},
+			{"test4","125","25"},
+			{"test5","126","26"}
+			
+		};
+	}
+	
+@Test
+public void createEmpl(String name1, String salary1 , String age1) throws IOException, ParseException{
+f = new FileReader(filepath);
+JSONObject js = (JSONObject)parser.parse(f);
+//js.replace("name", name1);
+js.put("name", name1);
+js.put("salary", salary1);
+js.put("age", age1);
+Response res = PostMethod.postExecute(baseurl, createEmployee, js.toJSONString(),null, null, null);
+
+
+
+	
+} 
+
+
+}

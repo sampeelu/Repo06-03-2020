@@ -1,0 +1,16 @@
+package org.samyak.restAssuredSample;
+
+import io.restassured.RestAssured;
+import io.restassured.specification.RequestSpecification;
+
+public class GeneralUtility {
+	
+	public  void executeGET() {
+		
+		RequestSpecification res = RestAssured.given();
+		
+		
+		
+	}
+
+}

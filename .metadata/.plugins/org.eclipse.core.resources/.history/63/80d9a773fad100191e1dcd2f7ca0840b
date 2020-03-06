@@ -1,0 +1,19 @@
+
+public class primeNumers {
+
+	public static void main(String[] args) {
+		int count = 1;
+		int  n =100;
+		for(int i=1;i<=100;i++){
+			if(n%i==0){
+				count++;
+			}
+			if(count==2){
+				System.out.println(i + "PM");
+			}else
+				System.out.println("not PM");
+		}
+
+	}
+
+}

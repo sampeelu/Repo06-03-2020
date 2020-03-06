@@ -1,0 +1,13 @@
+package makeMyTrippckg;
+
+import org.samyak.com.generaicLib.FilLib;
+import org.testng.annotations.Test;
+
+public class FileTest extends FilLib{
+	FilLib f = new FilLib();
+	@Test
+	public void executfile(){
+		f.getdata("Sheet1", 1,1);
+	}
+
+}

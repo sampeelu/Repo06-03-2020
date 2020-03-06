@@ -1,0 +1,20 @@
+
+public class MissingNumInArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	
+	public static void missing() {
+		int arr[] = {1,2,4,5,6};
+		int n = arr.length-1;
+		int total = (n+1)*(n+2)/2;
+		for(int i=0;i<arr.length;i++){
+			total = total-arr[i];
+			
+		}
+		System.out.println(total);
+	}
+
+}

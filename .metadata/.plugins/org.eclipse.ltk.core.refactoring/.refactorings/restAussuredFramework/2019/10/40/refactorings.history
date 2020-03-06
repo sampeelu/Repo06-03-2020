@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;restAussuredFramework&apos;&#x0D;&#x0A;- Original project: &apos;restAussuredFramework&apos;&#x0D;&#x0A;- Original element: &apos;restAussuredFramework/src/test/java/org.samyak.restAussuredFramework&apos;" description="Delete element" element1="/src\/test\/java&lt;org.samyak.restAussuredFramework" element2="/src\/test\/java&lt;org.samyak" element3="/src\/test\/java&lt;org" elements="3" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1570296889492" subPackages="false" version="1.0"/>
+</session>

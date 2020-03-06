@@ -1,0 +1,18 @@
+package org.samyak.restAssuredSample;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.testng.annotations.Test;
+
+public class TestClass {
+	
+	@Test
+	public void getEmployees(){
+		Map<String,String> hm = new HashMap<String, String>();
+		GeneralUtility.executeGET(headerMap, queryParamMap, endPoint);
+		
+		
+	}
+
+}

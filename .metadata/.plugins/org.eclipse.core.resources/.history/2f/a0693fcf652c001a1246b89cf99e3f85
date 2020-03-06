@@ -1,0 +1,45 @@
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.gherkin.model.Then;
+import com.google.gson.JsonObject;
+import com.sun.xml.internal.ws.client.sei.ResponseBuilder.Body;
+
+import Apiconstants.Constants;
+import apiUtility.CreateEmpApi;
+import io.restassured.response.Response;
+import jdk.nashorn.internal.scripts.JS;
+
+public class CreateEmployeeTest extends Constants{
+	FileReader f;
+	JSONParser parser = new JSONParser();
+	CreateEmpApi ob = new CreateEmpApi();
+	final String file_reader = "F:\\EclipseOxygen\\REstAPIPOJO\\src\\main\\java\\requestPayload\\createEmployee.json";
+	@DataProvider
+	public Object[][] getData(){
+		return new Object[][]{
+			{"test2","123","23"},
+			{"test3","124","24"},
+			{"test4","125","25"},
+			{"test5","126","26"}
+
+		};
+	}
+
+	@Test
+	public void createEmplTest(String name1, String salary1 , String age1, String body) throws IOException, ParseException{
+	
+	Response res = HttpGeneral.executePost(baseurl, createEmpEndPoint, null, null, null, ob.createEmpReq(name1, salary1, age1));
+		
+	
+		
+		
+	} 
+}

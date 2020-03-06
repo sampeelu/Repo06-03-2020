@@ -1,0 +1,8 @@
+package responsePayload;
+
+public class GetResponse {
+	
+	private String status;
+	private DataC data;
+
+}

@@ -1,0 +1,12 @@
+
+public interface Ab {
+	int i = 10;
+	
+	abstract name();
+
+}
+
+class B implements Ab{
+	
+}
+

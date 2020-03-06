@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="6606" started-at="2020-02-25T17:49:11Z" finished-at="2020-02-25T17:49:18Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="6606" started-at="2020-02-25T17:49:11Z" finished-at="2020-02-25T17:49:18Z">
+      <class name="org.samyak.restAssuredSample.TestClass">
+        <test-method status="PASS" signature="getEmployees(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:org.samyak.restAssuredSample.TestClass@47fd17e3]" name="getEmployees" duration-ms="6501" started-at="2020-02-25T23:19:11Z" data-provider="responseValidation" finished-at="2020-02-25T23:19:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Tiger Nixon]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[320800]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[61]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getEmployees -->
+      </class> <!-- org.samyak.restAssuredSample.TestClass -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

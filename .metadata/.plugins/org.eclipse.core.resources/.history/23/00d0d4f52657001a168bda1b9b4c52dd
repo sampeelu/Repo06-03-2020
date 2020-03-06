@@ -1,0 +1,9 @@
+package org.samyak.restAssuredSample;
+
+public class GeneralUtility {
+	
+	public  void ExecuteGET() {
+		
+	}
+
+}

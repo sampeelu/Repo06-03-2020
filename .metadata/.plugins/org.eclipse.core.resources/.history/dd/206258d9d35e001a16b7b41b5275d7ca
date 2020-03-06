@@ -1,0 +1,80 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileFolder {
+
+	public static void main(String[] args) throws IOException {
+
+		//foldercreation();
+		//fileCreation();
+		//writeDataInFile();
+		//readFile();
+	}
+
+	/**
+	 * folder creation
+	 */
+	public static void foldercreation(){
+		File f = new File("F:\\EclipseOxygen\\TestJava\\fileFolder");
+		if(f.exists())
+			System.out.println("file already created");
+		else {
+			f.mkdir();
+			System.out.println("file created ");
+		}
+
+	}
+
+	/**
+	 * file creation
+	 * @throws IOException 
+	 */
+	public static void fileCreation() throws IOException{
+		File f = new File("F:\\EclipseOxygen\\TestJava\\fileFolder\\createFile.doc");
+		if(f.exists())
+			System.out.println("file already created");
+		else{
+			f.createNewFile();
+			System.out.println("file created");
+		}
+
+	}
+
+
+	/**
+	 * write the data in file
+	 * @throws IOException 
+	 * 
+	 */
+
+	public static void writeDataInFile() throws IOException{
+		FileWriter writer = new FileWriter("F:\\EclipseOxygen\\TestJava\\fileFolder\\createFile.xlx");
+		writer.write("Hi I am done");
+		writer.write("write successfully");
+		writer.flush();
+		writer.close();
+		System.out.println("printed");
+
+	} 
+	/**
+	 * file reader
+	 * @throws IOException 
+	 */
+	
+	public static void readFile() throws IOException{
+		File f = new File("F:\\EclipseOxygen\\TestJava\\fileFolder\\createFile.xlx");
+		FileReader fr = new FileReader(f);
+		char []ch = new char[(int)f.length()];
+		fr.read(ch);
+		for(Character c : ch){
+			System.out.print(c);
+		}
+
+	}
+}
+
+
+

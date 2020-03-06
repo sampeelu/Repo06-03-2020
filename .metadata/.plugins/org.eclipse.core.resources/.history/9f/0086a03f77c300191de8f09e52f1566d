@@ -1,0 +1,31 @@
+package org.samyak.com.maven;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class AppTest 
+{
+	WebDriver driver ;
+	
+	@Test
+	public void testFB(){
+		
+		//System.setProperty("webdriver.chrome.driver", ".//com.maven//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "F:\\EclipseOxygen\\com.maven\\chromedriver.exe");
+		driver = new ChromeDriver();	
+
+		driver.get("https://phptravels.com/demo");
+		WebElement img = driver.findElement(By.xpath("//img[@src = 'https://phptravels.com/assets/img/front.png']"));
+		boolean b = img.isDisplayed();
+		System.out.println(b);
+		//capture the size of image
+		
+		org.openqa.selenium.Dimension dim = img.getSize();
+		driver.quit();
+		
+	}
+	
+}

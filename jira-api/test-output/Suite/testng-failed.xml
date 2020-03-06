@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="Test">
+    <classes>
+      <class name="org.jira.jira_api.OAuth"/>
+      <class name="org.jira.jira_api.LoginAPITesting"/>
+      <class name="org.jira.jira_api.Basic6"/>
+      <class name="org.jira.jira_api.Basic7"/>
+      <class name="org.jira.jira_api.Basic8"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test(failed)">
+    <classes>
+      <class name="org.jira.jira_api.Basic7">
+        <methods>
+          <include name="getURLData"/>
+          <include name="addComments"/>
+        </methods>
+      </class> <!-- org.jira.jira_api.Basic7 -->
+      <class name="org.jira.jira_api.Basic8">
+        <methods>
+          <include name="getURLData"/>
+          <include name="updateComments"/>
+        </methods>
+      </class> <!-- org.jira.jira_api.Basic8 -->
+      <class name="org.jira.jira_api.Basic6">
+        <methods>
+          <include name="getURLData"/>
+          <include name="createBugTests" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- org.jira.jira_api.Basic6 -->
+      <class name="org.jira.jira_api.LoginAPITesting">
+        <methods>
+          <include name="getURLData"/>
+          <include name="createBugTests" invocation-numbers="0 1 2 3 4 5"/>
+        </methods>
+      </class> <!-- org.jira.jira_api.LoginAPITesting -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->

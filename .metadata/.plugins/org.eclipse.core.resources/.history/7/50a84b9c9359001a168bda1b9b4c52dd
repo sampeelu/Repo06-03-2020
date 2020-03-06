@@ -1,0 +1,25 @@
+package org.samyak.com.generaicLib;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class FilLib {
+	
+	public Object[][] getdata(String sheetName , int rowNum , int celNum) throws IOException {
+		
+		FileInputStream f = new FileInputStream("F:\\EclipseOxygen\\makeMyTrip\\fileData\\fileData.xlsx");
+		XSSFWorkbook wb = XSSFWorkbookFactory.create(f);
+		
+		
+		
+		
+		
+		
+	}
+
+}

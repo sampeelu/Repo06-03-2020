@@ -1,0 +1,75 @@
+import static org.testng.Assert.assertEquals;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Properties;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import com.aventstack.extentreports.gherkin.model.Given;
+
+import Apiconstants.Constants;
+import httpMethods.GetMethods;
+import io.restassured.RestAssured;
+import io.restassured.assertion.HeaderMatcher;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+
+public class ExecuteGet extends Constants{
+	
+	GetMethods getM;
+	final String filepath = "F:\\EclipseOxygen\\REstAPIPOJO\\src\\main\\java\\files\\BaseUrl.properties";
+	
+	@DataProvider
+	public Object[][] getdata(){
+		
+		return new Object[][]{
+			{"23","21100"},{"0","21321"},{"23","87675"},{"23","76889"}
+		};
+	}
+	
+	@Test(dataProvider = "getdata")
+	public void executionGetTest(String employee_age,String employee_salary) throws IOException, ParseException{
+		SoftAssert softAssert = new SoftAssert();
+		HashMap<String, String> headermap = new HashMap<String, String>();
+		headermap.put("Content-Type", "application/json");
+		HashMap<String, String> qmap = new HashMap<String, String>();
+		Response res = GetMethods.executeGet(baseurl, 
+		Utility.getProperty(filepath,"ResourcesEmployees"), headermap, null, null);
+		System.out.println(res.statusCode());
+		
+		
+		JsonPath jsp = new JsonPath(res.asString());
+		//System.out.println(jsp.prettyPrint());
+		/*String act= jsp.getString("[0].employee_age");
+		System.out.println("valiue is "+act);
+		String exp = employee_age;
+		
+		String actsalary = jsp.getString("[0].employee_salary");
+		String expSalary = employee_salary;
+		softAssert.assertEquals(act, exp);
+		softAssert.assertEquals(actsalary, expSalary);
+		softAssert.assertAll();*/
+		
+		// read json file
+		 JSONParser parser = new JSONParser();
+		 JSONObject jsonObject = (JSONObject) parser.parse(jsp.toString());
+		 JSONArray age = (JSONArray) jsonObject.get("employee_age");
+		 Iterator<String> iterator = age.iterator();
+         while (iterator.hasNext()) {
+             System.out.println(iterator.next());
+         }
+	}
+	
+
+}

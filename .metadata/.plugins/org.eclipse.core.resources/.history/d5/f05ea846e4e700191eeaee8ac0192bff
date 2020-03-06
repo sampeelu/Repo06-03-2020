@@ -1,0 +1,14 @@
+package org.jira.jira_api;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+
+import org.json.simple.parser.JSONParser;
+
+public class Basics3 {
+
+	Properties pobj = new Properties();
+	JSONParser parser = new JSONParser();
+	FileInputStream f;
+
+}

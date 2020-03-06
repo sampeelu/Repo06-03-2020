@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Command line suite]">
+  <test name="Command line test" preserve-order="false">
+    <classes>
+      <class name="org.samyak.com.flipcart.LoginPageTest"/>
+      <class name="org.samyak.com.flipcart.SearchPageTest"/>
+      <class name="org.samyak.com.flipcart.SelectedProductTest"/>
+      <class name="org.samyak.com.flipcart.ShowByProdcutOnlineTest"/>
+      <class name="org.samyak.com.flipcart.SortByTest"/>
+    </classes>
+  </test> <!-- Command line test -->
+  <test name="Command line test(failed)">
+    <classes>
+      <class name="org.samyak.com.flipcart.SearchPageTest">
+        <methods>
+          <include name="quit"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- org.samyak.com.flipcart.SearchPageTest -->
+      <class name="org.samyak.com.flipcart.SelectedProductTest">
+        <methods>
+          <include name="quit"/>
+          <include name="addToCartProduct"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- org.samyak.com.flipcart.SelectedProductTest -->
+      <class name="org.samyak.com.flipcart.SortByTest">
+        <methods>
+          <include name="executeSortByTest"/>
+          <include name="quit"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- org.samyak.com.flipcart.SortByTest -->
+      <class name="org.samyak.com.flipcart.LoginPageTest">
+        <methods>
+          <include name="quit"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- org.samyak.com.flipcart.LoginPageTest -->
+      <class name="org.samyak.com.flipcart.ShowByProdcutOnlineTest">
+        <methods>
+          <include name="quit"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- org.samyak.com.flipcart.ShowByProdcutOnlineTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->

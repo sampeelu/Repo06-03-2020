@@ -1,0 +1,19 @@
+
+public interface Ab {
+	int i = 10;
+	
+	abstract void name();
+
+}
+
+class Bc implements Ab{
+	public void name()
+{
+		System.out.println(Ab.i);
+	}
+}
+class D extends Bc{
+	
+	
+} 
+

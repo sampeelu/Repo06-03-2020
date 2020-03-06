@@ -1,0 +1,71 @@
+package objectRepo;
+
+import java.util.List;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
+import org.openqa.selenium.support.PageFactory;
+import org.samyak.com.generaicLib.BaseClass;
+
+public class Home {
+	
+WebDriver  driver;
+	
+	public Home(){
+		PageFactory.initElements(BaseClass.driver, this);
+	}
+
+	@FindBy(xpath = "//a[text()='Search']")
+	private WebElement search;
+	
+	@FindBy(xpath = "//span[@xpath = '1']")
+	private WebElement stops;
+	
+	@FindBy(xpath = "//span[@class = 'box']/span[@xpath='1']")
+	private WebElement departFromND;
+	
+	@FindBy(xpath= "//div[@id='arrival_group']//span[4]//label[1]//span[1]//span[1]")
+	private WebElement arrivalBng;
+	
+	@FindBy(xpath= "//span[contains(@class,'labeltext')][contains(text(),'Air India')]")
+	private WebElement airline;
+
+	@FindBy(xpath = "//span[contains(@class,'actual-price')]")
+	private List<WebElement> lst;
+
+	public WebElement getSearch() {
+		return search;
+	}
+
+	public WebElement getStops() {
+		return stops;
+	}
+
+	public WebElement getDepartFromND() {
+		return departFromND;
+	}
+
+	public WebElement getArrivalBng() {
+		return arrivalBng;
+	}
+
+	public WebElement getAirline() {
+		return airline;
+	}
+	
+	
+	public void selectLowestPriceFlight() {
+		
+		search.click();
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+}

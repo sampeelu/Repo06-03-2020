@@ -1,0 +1,42 @@
+package org.samyak.restAssuredSample;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+
+public class TestClass {
+	
+	@DataProvider
+	public Object[][] responseValidation(){
+		return new Object[][]{
+			{"Dai Rios","217500","35"},
+			{"Caesar Vance","106450","21"},
+			{"Yuri Berry","675000","40"}
+		};
+	}
+	
+	@Test
+	public void getEmployees(String employee_name,String employee_salary,String employee_age){
+		Map<String,String> hm = new HashMap<String, String>();
+		hm.put("Content-Type", "application/json");
+	
+		Response res = GeneralUtility.executeGET(hm, null, APIConstant.getEmpEndPoint);
+		// print the response
+		System.out.println("..................."+res.prettyPrint());
+		
+		// validate the response
+		JsonPath jsp = new JsonPath(res.asString());
+		String actAge = jsp.getString("[3].employee_age");
+		List<String> lst = jsp.getList(actAge);
+		
+		
+	}
+
+}

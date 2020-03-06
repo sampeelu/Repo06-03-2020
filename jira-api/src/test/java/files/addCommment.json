@@ -1,0 +1,7 @@
+{
+    "body": "hi i added comment through restassured",
+    "visibility": {
+        "type": "role",
+        "value": "Administrators"
+    }
+}

@@ -1,0 +1,20 @@
+public class WithoutClass
+{
+	public static void main(String[] args) {
+	A a = new B();
+    a.m();
+	}
+}
+
+class A{
+    public void m(String a){
+        System.out.println("super");
+        
+    }
+}
+
+class B extends A{
+    public void m(){
+        System.out.println("Sub");
+    }
+}

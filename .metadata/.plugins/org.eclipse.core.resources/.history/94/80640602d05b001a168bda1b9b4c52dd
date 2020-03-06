@@ -1,0 +1,7 @@
+package serialization;
+
+public class Demo {
+	
+	Employee emp = new Employee(1, "sam",1);
+
+}

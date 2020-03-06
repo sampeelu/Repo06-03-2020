@@ -1,0 +1,62 @@
+package objectRepo;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.samyak.com.generaicLib.BaseClass;
+import org.samyak.com.generaicLib.GeneralClass;
+import org.testng.Assert;
+
+public class SearchHotelPage {
+	
+	GeneralClass gc;
+	
+	public SearchHotelPage() {
+	PageFactory.initElements(BaseClass.driver,this);
+	}
+	
+	@FindBy(xpath = "//a[@class = 'mapCont']")
+	private WebElement viewMap;
+	
+	@FindBy(xpath = "//div[contains(@class,'listingMapModal')]//span[1]//div")
+	private WebElement slider1;
+	
+	@FindBy(xpath = "//div[contains(@class,'listingMapModal')]//span[2]//div")
+	private WebElement slider2;
+
+	@FindBy(xpath = "The Zuri Whitefield")
+	private WebElement zuriWhitefield;
+
+	@FindBy(xpath = "//span[@title = 'Pay @ Hotel Available']")
+	private WebElement filterPay; 
+	
+	
+	public WebElement getViewMap() {
+		return viewMap;
+	}
+	
+	
+	public WebElement getSlider1() {
+		return slider1;
+	}
+	public WebElement getZuriWhitefield() {
+		return zuriWhitefield;
+	}
+
+	public void searchHotels() throws InterruptedException {
+
+		viewMap.click();
+		gc.waitForPageToLoad(BaseClass.driver);
+		filterPay.click();
+		slider1.click();
+		Thread.sleep(5000);
+		gc.dragAndDropL2R(slider1);
+		gc.waitForPageToLoad(BaseClass.driver);
+		gc.dragAndDrop(slider2);
+		Thread.sleep(10000);
+		
+	}
+	
+	
+}

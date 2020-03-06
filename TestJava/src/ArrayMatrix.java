@@ -1,0 +1,68 @@
+import java.util.Arrays;
+public class ArrayMatrix {
+	
+	static void printSpiralOrder(int[] arr, int[][] mat)
+	{
+		int top = 0, bottom = 3 - 1;
+		int left = 0, right = 3 - 1;
+
+		int index = 0;
+
+		while (true)
+		{
+			if (left > right) {
+				break;
+			}
+
+			// print top row
+			for (int i = left; i <= right; i++) {
+				mat[top][i] = arr[index++];
+			}
+			top++;
+
+			if (top > bottom) {
+				break;
+			}
+
+			// print right column
+			for (int i = top; i <= bottom; i++) {
+				mat[i][right] = arr[index++];
+			}
+			right--;
+
+			if (left > right) {
+				break;
+			}
+
+			// print bottom row
+			
+			for (int i = right; i >= left; i--) {
+				mat[bottom][i] = arr[index++];
+			}
+			bottom--;
+
+			if (top > bottom) {
+				break;
+			}
+
+			// print left column
+			for (int i = bottom; i >= top; i--) {
+				mat[i][left] = arr[index++];
+			}
+			left++;
+		}
+	}
+
+	public static void main(String[] args) throws Exception {
+		int M=3;
+		int N=3;
+		int[] a = new int[] {1,2,3,4,5,6,7,8,9};
+		int[][] m = new int[M][N];
+		printSpiralOrder(a, m);
+		for(int i=0;i<M;i++) {
+			System.out.println(Arrays.toString(m[i]));
+		}
+
+	
+	}
+}

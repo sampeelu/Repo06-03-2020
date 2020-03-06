@@ -1,0 +1,14 @@
+package org.samyak.com.generaicLib;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+public class FilLib {
+	
+	public Object[][] getdata(String sheetName , int rowNum , int celNum) throws FileNotFoundException {
+		
+		FileInputStream f = new FileInputStream("./makeMyTrip//fileData//fileData.xlsx");
+		
+	}
+
+}

@@ -1,0 +1,33 @@
+package org.samyak.restAssuredSample;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import io.restassured.response.Response;
+
+public class TestClass {
+	
+	@DataProvider
+	public Object[][] responseValidation(){
+		return new Object[][]{
+			{"Dai Rios","217500","35"},
+			{"Caesar Vance","106450","21"},
+			{"Yuri Berry","675000","40"}
+		};
+	}
+	
+	@Test
+	public void getEmployees(){
+		Map<String,String> hm = new HashMap<String, String>();
+		hm.put("Content-Type", "application/json");
+	
+		Response res = GeneralUtility.executeGET(hm, null, APIConstant.getEmpEndPoint);
+		//System.out.println(res.asString());
+		System.out.println("..................."+res.prettyPrint());
+		
+	}
+
+}

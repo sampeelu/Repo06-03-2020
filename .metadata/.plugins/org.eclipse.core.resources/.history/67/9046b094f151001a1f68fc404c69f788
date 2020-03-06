@@ -1,0 +1,14 @@
+package SearchHotelPage;
+
+import org.testng.annotations.Test;
+
+public class SearchHotelPageTest {
+	
+	@Test
+	public void searchHotelsTest(){
+		
+		
+		
+	}
+
+}

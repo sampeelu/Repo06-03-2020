@@ -1,0 +1,24 @@
+package org.samyak.com.maven;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class AppTest 
+{
+	WebDriver driver ;
+	@Test
+	public void testFB(){
+		
+		System.setProperty("webdriver.chrome.driver", ".//com.maven//chromedriver.exe");
+		driver = new ChromeDriver();	
+
+/*		driver = new FirefoxDriver();*/
+		
+		driver.get("https://phptravels.com/demo");
+		//WebElement img = driver.findElement(By.className(""))
+		
+		
+	}
+	
+}

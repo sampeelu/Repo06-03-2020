@@ -1,0 +1,171 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+
+public class UniqueCharInStr {
+
+	public static void main(String[] args) {
+
+		String str = "sambhaw jain jain modi";
+		//System.out.println(str.indexOf('m'));
+
+		//	uniquestrPract(str);
+		//System.out.println(str.indexOf('9'));
+
+		/*		System.out.println(str.valueOf('a'));*/
+		//uniqueChat("aaabchddeeffff");
+		uniqueChat2("jjjjj jj");
+		//	uniquech("saambha");
+		//	System.out.println();
+
+		//	printDistinct(str);
+		//	uniqueCharacters("samsaymmkm");
+
+		//mapString(str);
+
+	}
+
+	public static void uniqueChat(String str){
+		char ch[] = str.toCharArray();
+		HashMap<Character, Integer> m= new HashMap<>();
+		for(int i= 0;i<=ch.length-1;i++){
+			if(m.containsKey(ch[i])){
+
+				m.put(ch[i],m.get(ch[i])+1);
+
+
+			}else{
+				m.put(ch[i], 1);
+			}
+		}
+		for(Map.Entry<Character, Integer> entry : m.entrySet()){
+			if(entry.getValue()==1){
+				System.out.print(entry.getKey());
+			}
+		}
+
+
+
+
+	}
+
+	public static void uniquech(String str){
+		ArrayList list = new ArrayList();
+		HashSet set  =new HashSet();
+		char[] ch = str.toCharArray();
+		for(int i=0;i<=ch.length-1;i++){
+			list = new ArrayList(Arrays.asList(ch[i]));
+			//list.add(ch[i]);
+
+			set.add(list.add(ch[i]));
+
+		}
+		System.out.print(set);
+	}
+
+	public static void uniqueCharacters(String str){
+		String temp = "";
+		for (int i = 0; i < str.length(); i++){
+
+			if (temp.indexOf(str.charAt(i)) < 0 ){
+				//System.out.println(temp.indexOf(str.charAt(i)));
+				temp = temp + str.charAt(i);
+
+			}
+			else {
+				temp = temp.replace(String.valueOf(str.charAt(i)), "");
+			}
+
+
+		}
+
+		System.out.println(temp + " ");
+
+	}
+
+
+	static final int NO_OF_CHARS = 256; 
+
+	/* Print duplicates present in the passed string */
+	static void printDistinct(String str) 
+	{ 
+		// Create an array of size 256 and count of 
+		// every character in it 
+		int[] count = new int[NO_OF_CHARS];
+		/* Count array with frequency of characters */
+		int i; 
+		for (i = 0; i < str.length(); i++) 
+			if(str.charAt(i)!=' ') 
+				count[(int)str.charAt(i)]++; 
+
+		//  System.out.println(Arrays.toString(count));
+		int n = i; 
+		// Print characters having count more than 0 
+		for (i = 0; i < n; i++) 
+			if (count[(int)str.charAt(i)] > 1){ 
+				System.out.print(str.charAt(i));
+				System.out.println();
+				str.replace(String.valueOf(str.charAt(i)),"");
+				System.out.println(str);
+
+			}
+
+	} 
+	/**
+	 * 
+	 * practise of unique char
+	 * @param str
+	 */
+	public static void uniquestrPract(String str){
+		int arr[] = new int[256];
+		int i;
+		for(i=0;i<str.length();i++)
+			if(str.charAt(i)!=' ')
+				arr[(int)str.charAt(i)] =  arr[(int)str.charAt(i)]+1;
+
+		int n=i;
+		for(i=0;i<n;i++)
+			if(arr[(int)str.charAt(i)]==1){
+				System.out.print(str.charAt(i));
+			}
+
+	}
+
+	public static void mapString(String str) {
+		char [] ch = str.toCharArray();
+		//HashMap< Character,Integer> m = new HashMap<>();
+		HashMap< String,Integer> m = new HashMap<>();
+		String []sp = str.split(" ");
+		for(int i=0;i<sp.length;i++){
+
+			if(m.containsKey(sp[i]))
+				m.put(sp[i], m.get(sp[i])+1);
+
+			else
+				m.put(sp[i],1);
+
+		}
+		System.out.println(m);
+	}
+	
+	public static void uniqueChat2(String str){
+		for(int i =0;i<str.length()-1;i++){
+			for(int j = i+1;j<str.length();j++){
+				if((str.charAt(i)==str.charAt(j)) && str.charAt(i)!='0'){
+					str = str.replace(str.charAt(j), '0');
+				}
+					
+				if(j==str.length()-1 && (str.charAt(i)==str.charAt(j)))
+					str = str.replace(str.charAt(i), '0');
+				
+			}
+		}
+		System.out.println(str.replaceAll("0", ""));
+	}
+		
+		
+		
+
+}

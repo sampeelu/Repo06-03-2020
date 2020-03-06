@@ -1,0 +1,25 @@
+
+public class PermutationOfString {
+
+	public static void main(String[] args) {
+
+	}
+	
+	public static String swapStr(String a, int i , int j) {
+		char[] b = a.toCharArray();
+		char temp;
+		temp = b[i];
+		b[i] = b[j];
+		b[j] = temp;
+		return String.valueOf(b);
+	}
+	
+	public static void permutationString(String str, int start, int end) {
+		
+		
+	}
+	
+	
+	
+
+}

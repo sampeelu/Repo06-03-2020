@@ -1,0 +1,23 @@
+package org.samyak.restAssuredSample;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.testng.annotations.Test;
+
+import io.restassured.response.Response;
+
+public class TestClass {
+	
+	@Test
+	public void getEmployees(){
+		Map<String,String> hm = new HashMap<String, String>();
+		hm.put("Content-Type", "application/json");
+	
+		Response res = GeneralUtility.executeGET(hm, null, APIConstant.getEmpEndPoint);
+		//System.out.println(res.asString());
+		System.out.println(res.toString());
+		
+	}
+
+}

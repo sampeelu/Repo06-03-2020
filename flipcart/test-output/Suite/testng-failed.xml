@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="Test">
+    <classes>
+      <class name="org.samyak.com.flipcart.LoginPageTest">
+        <methods>
+          <exclude name="login"/>
+        </methods>
+      </class> <!-- org.samyak.com.flipcart.LoginPageTest -->
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Failed suite [Suite] -->

@@ -1,0 +1,25 @@
+package org.samyak.com.maven;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class AppTest 
+{
+	WebDriver driver ;
+	
+	@Test
+	public void testFB(){
+		
+		//System.setProperty("webdriver.chrome.driver", ".//com.maven//chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "F:\\EclipseOxygen\\com.maven\\chromedriver.exe");
+		driver = new ChromeDriver();	
+
+		driver.get("https://phptravels.com/demo");
+		driver.findElement(By.xPath("//img[@src = 'https://phptravels.com/assets/img/front.png']"));
+		
+		
+	}
+	
+}

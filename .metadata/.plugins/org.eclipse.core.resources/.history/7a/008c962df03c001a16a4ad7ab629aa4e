@@ -1,0 +1,65 @@
+package objectRepository;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
+import org.openqa.selenium.support.PageFactory;
+import org.samyak.com.generaicLib.BaseClass;
+import org.samyak.com.generaicLib.GeneralClass;
+
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
+
+public class SortBy {
+	LoginPage lp ;
+	@FindBy(xpath = "//span[text()='Electronics']")
+	public WebElement electronics;
+	
+	@FindBy(partialLinkText = "Screenguards")
+	public WebElement screengaurd;
+
+	@FindBy(xpath = "//div[text()='Price -- Low to High']")
+	public WebElement priceLowToHigh;
+	
+	@FindBy(xpath = "//div[contains(@data-id,'ACCF')]")
+	public List<WebElement> verifyPRiceLowToHigh;
+	
+	
+	public LoginPage getLp() {
+		return lp;
+	}
+
+	public WebElement getScreengaurd() {
+		return screengaurd;
+	}
+
+	public WebElement getPriceLowToHigh() {
+		return priceLowToHigh;
+	}
+
+	public WebElement getElectronics() {
+		return electronics;
+		
+	}
+	
+	public SortBy(){
+		lp = PageFactory.initElements(BaseClass.driver,LoginPage.class);
+		PageFactory.initElements(BaseClass.driver,this);
+	}
+	
+	public void clickonScreenGaurdsSortBy(){
+		lp.loginflipkart();
+		electronics.click();
+		
+		screengaurd.click();
+		priceLowToHigh.click();
+		ArrayList ls = new ArrayList();
+		ls.add(verifyPRiceLowToHigh);
+		Collections.sort(ls);
+		
+	}
+
+}

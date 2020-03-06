@@ -1,0 +1,38 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Properties;
+
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.gherkin.model.Given;
+
+import Apiconstants.Constants;
+import httpMethods.GetMethods;
+import io.restassured.RestAssured;
+import io.restassured.assertion.HeaderMatcher;
+import io.restassured.response.Response;
+
+public class ExecuteGet extends Constants{
+	
+	GetMethods getM;
+	final String filepath = "F:\\EclipseOxygen\\REstAPIPOJO\\src\\main\\java\\files\\BaseUrl.properties";
+	
+	
+	@Test
+	public void executionGetTest() throws IOException{
+		HashMap<String, String> headermap = new HashMap<String, String>();
+		headermap.put("Content-Type", "application/json");
+		HashMap<String, String> qmap = new HashMap<String, String>();
+		Response res = GetMethods.executeGet(baseurl, 
+				Utility.getProperty(filepath,"ResourcesEmployees"), headermap, null, null);
+		System.out.println(res.statusCode());
+		System.out.println(res.asString());
+		//System.out.println(Utility.getProperty(filepath, "BaseurlEmployee"));
+		
+	}
+	
+
+	
+}

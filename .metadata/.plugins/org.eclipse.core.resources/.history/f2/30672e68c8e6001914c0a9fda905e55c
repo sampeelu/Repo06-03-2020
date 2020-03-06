@@ -1,0 +1,16 @@
+import java.util.ArrayList;
+
+public class ReverseArrays {
+
+	public static void main(String[] args){
+		ArrayList<Integer> lst = new ArrayList<>();
+		revArrayList(arr);
+	}
+	
+	public static void revArrayList(ArrayList<Integer> lst){
+		
+		
+		
+	}
+	
+}

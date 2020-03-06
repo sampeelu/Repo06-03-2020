@@ -1,0 +1,27 @@
+public class WithoutClass
+{
+	public static void main(String[] args) {
+	B a = new B();
+    a.m("");
+    int i = 1;
+    int j = --i;
+    System.out.println(i+", "+j);
+    
+	}
+}
+
+abstract A{
+    public static void m1();
+    public static void m2();
+    public static void m3();
+    
+        
+        
+    
+}
+
+class B extends A{
+    public void m(){
+        System.out.println("Sub");
+    }
+}

@@ -1,0 +1,45 @@
+import java.io.File;
+import java.io.IOException;
+
+public class FolderCreation {
+
+	public static void main(String[] args) throws IOException {
+
+		//foldercreation();
+		fileCreation();
+	}
+	
+	/**
+	 * folder creation
+	 */
+	public static void foldercreation(){
+		File f = new File("F:\\EclipseOxygen\\TestJava\\fileFolder");
+		if(f.exists())
+			System.out.println("file already created");
+		else {
+			f.mkdir();
+		System.out.println("file created ");
+		}
+			
+		}
+	
+	/**
+	 * file creation
+	 * @throws IOException 
+	 */
+	public static void fileCreation() throws IOException{
+		File f = new File("F:\\EclipseOxygen\\TestJava\\fileFolder\\createFile.xlsx");
+		if(f.exists())
+			System.out.println("file already created");
+		else{
+			f.createNewFile();
+		System.out.println("file created");
+		}
+		
+	}
+	
+	
+	}
+	
+
+

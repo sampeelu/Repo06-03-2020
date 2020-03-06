@@ -1,0 +1,25 @@
+
+public class SwappingString {
+
+	public static void main(String[] args) {
+		String a = "peelu";
+		String b = "jain";
+		swappingstr(a,b);
+		
+	}
+	
+	public static void swappingstr(String a,String b){
+		a = a+b;
+		System.out.println(a); // peelujain
+		b = a.substring(0,a.length()-b.length());
+		System.out.println(b); // peelu
+		a = a.substring(b.length());
+		System.out.println("a is :"+a);
+		
+		
+		
+
+
+	}
+
+}

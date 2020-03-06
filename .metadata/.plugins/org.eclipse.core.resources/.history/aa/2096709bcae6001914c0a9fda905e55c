@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+
+public class ReverseArrays {
+
+	public static void main(String[] args){
+		ArrayList<Integer> lst = new ArrayList<>();
+		lst.add(2);
+		lst.add(8);
+		lst.add(1);
+		lst.add(12);
+		lst.add(6);
+		lst.add(10);
+		
+		revArrayList(lst);
+	}
+	
+	public static void revArrayList(ArrayList<Integer> lst){
+		
+		for(int i = 0;i<lst.size();i++){
+			int temp = lst.get(i);
+			lst.set(i, lst.get(lst.size()-1-i));
+			
+			lst.set(lst.size()-1,temp);
+			
+			System.out.println(lst);
+		}
+		//System.out.println(lst);
+		
+	}
+	
+}

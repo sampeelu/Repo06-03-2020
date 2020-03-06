@@ -1,0 +1,45 @@
+
+public class WithoutClass {
+
+	int i = 1;
+	public static void main(String[] args) {
+	/*int a = (int)2.2;
+	System.out.println(a);
+	
+	double d = 2;
+	System.out.println(d);
+	
+	int k = 'a';
+			System.out.println(k);
+			
+			char c = (char)22.2;
+			System.out.println(c);*/
+		if(!true==false){
+		int i = 20;
+		System.out.println(i++);
+		int k = i;
+		System.out.println(k);
+		}
+		
+		int l= 2>3?2:3;
+		System.out.println(l);
+		int sum =0;
+		int g = 123;
+		int count = 0;
+		while(g>0){
+			int rem = g%10;
+		sum = sum*10+rem;
+			g= g/10;
+			
+		}
+		System.out.println(sum);
+	Sample n = new Sample();
+		System.out.println(Sample.m);
+		Sample.m = 200;
+		System.out.println(Sample.m);
+	}
+}
+
+class Sample{
+	int m = 100;
+}

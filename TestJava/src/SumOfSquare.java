@@ -1,0 +1,47 @@
+
+public class SumOfSquare {
+
+	public static void main(String[] args) {
+
+		squareSum();
+		//sumOfsquare();
+
+
+	}
+
+	public static void squareSum(){
+		String s = "";
+		int i =1,n=3;
+		//int sum = n*(n+1)*(2*n-1)/6;
+		int sum = (2*n+1)*n*(n+1)/6;
+		for(i=1;i<=3;i++){
+			s = i+ "^2+";
+			 System.out.print(s);
+		}
+		//System.out.print(i+"^2=" + sum);
+	//	System.out.println();
+//		System.out.print( sum);
+		
+
+	}
+
+
+	/**
+	 * square of sum
+	 */
+	public static void sumOfsquare(){
+		int n= 5;
+		String s = "";
+		int sum = n*(n+1)*(2*n+1)/6; 
+		/*for(int i=0;i<=n;i++){
+			s = i+"^2+";
+		}*/
+
+		System.out.println(sum);
+
+
+
+	}
+
+
+}
