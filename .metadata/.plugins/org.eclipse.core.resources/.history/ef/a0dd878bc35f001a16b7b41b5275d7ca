@@ -8,7 +8,6 @@ abstract class Sample {
         String s = "i ma donig   best ";
         String st[] = s.split("\\s+");
         System.out.println(st[3]);
-        System.out.println("this is goint to git");
         
 	}
 

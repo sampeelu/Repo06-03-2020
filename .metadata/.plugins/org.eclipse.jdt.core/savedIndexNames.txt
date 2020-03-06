@@ -1,6 +1,5 @@
 INDEX VERSION 1.130+F:\EclipseOxygen\.metadata\.plugins\org.eclipse.jdt.core
 805315158.index
-84252450.index
 3535621608.index
 1054809635.index
 1346460041.index
