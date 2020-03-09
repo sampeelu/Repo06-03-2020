@@ -7,6 +7,7 @@ public abstract class A {
 abstract class B extends A{
 	public void m1(){
 		System.out.println("file only chane now pull");
+		System.out.println("file only chane now pull");
 		System.out.println("m1");
 	}
 }

@@ -1,0 +1,26 @@
+
+public class IntersectionArray {
+
+	public static void main(String[] args) {
+		int a1[] = {2,5,9,6,4,8};
+		int a2[] = {11,56,34,9,4};
+		intersectionArray(a1,a2);
+
+	}
+	
+	public static void intersectionArray(int a1[],int a2[]) {
+		
+		int a3;
+		for (int i = 0; i < a1.length; i++) {
+			for (int j = 0; j < a2.length; j++) {
+				
+				if(a1[i]==a2[j])
+					
+				a3 = a2[i];
+				
+			}
+		}
+		System.out.println(a3);
+	}
+
+}

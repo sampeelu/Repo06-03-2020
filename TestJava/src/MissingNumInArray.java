@@ -2,7 +2,9 @@
 public class MissingNumInArray {
 
 	public static void main(String[] args) {
-		missing();
+		//missing();
+		int arr[] = {4,6,8,9,2};
+		missingNum(arr,8);
 	}
 
 	public static void missing() {
@@ -15,7 +17,18 @@ public class MissingNumInArray {
 		}
 		System.out.println(total);
 	}
+	
+	/**
+	 * missing num findout
+	 */
 
+	public static void missingNum(int arr[], int miss) {
+		
+		for(int i = 0;i<arr.length;i++){
+			if(miss==arr[i])
+				System.out.println("this is missing num : " + arr[i]);
+		}
+	}
 
 
 }

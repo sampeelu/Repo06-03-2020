@@ -1,0 +1,67 @@
+package newPackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+
+import com.aventstack.extentreports.gherkin.model.Given;
+
+import io.restassured.parsing.Parser;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+
+public class OAuth2 {
+
+	@Test
+	public static void authentication2() throws InterruptedException{
+
+		System.setProperty("webdriver.chrome.driver", "F:\\EclipseOxygen\\REstAPIPOJO\\resources\\chromedriver.exe");
+		WebDriver driver= new ChromeDriver();
+
+		driver.get("https://accounts.google.com/o/oauth2/v2/auth?scope=https://www.googleapis.com/auth/userinfo.email&auth_url=https://accounts.google.com/o/oauth2/v2/auth&client_id=692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com&response_type=code&redirect_uri=https://rahulshettyacademy.com/getCourse.php&state=verifyfjdss");
+		driver.findElement(By.cssSelector("[type='email']")).sendKeys("modisam26@gmail.com");
+		driver.findElement(By.cssSelector("[type='email']")).sendKeys(Keys.ENTER);
+		Thread.sleep(3000);
+
+		driver.findElement(By.cssSelector("[type='password']")).sendKeys("peelujain@26");
+		driver.findElement(By.cssSelector("[type='password']")).sendKeys(Keys.ENTER);
+
+		String url = driver.getCurrentUrl();
+		System.out.println("url -->"+ url);
+		
+		String partialStr = url.split("code=")[1];
+		String code = partialStr.split("&scope")[0];
+		
+		System.out.println("code is :"+code);
+		
+		// authentication API
+		
+		String response = given().
+		urlEncodingEnabled(false).
+		queryParam("code",code).
+		queryParam("client_id","692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com").
+		queryParam("client_secret", "erZOWM9g3UtwNRj340YYaK_W").
+		queryParam("grant_type", "authorization_code").
+		queryParam("state", "verifyfjdss").
+		queryParam("session_state", "ff4a89d1f7011eb34eef8cf02ce4353316d9744b..7eb8").
+		when().log().all().
+		post("https://www.googleapis.com/oauth2/v4/token").asString();
+		JsonPath js = new JsonPath(response);
+		String access_token = js.get("access_token");
+		
+		Response rs = given().
+		contentType("application/json").
+		queryParam("access_token", access_token).expect().defaultParser(Parser.JSON).
+		when().
+		get("https://rahulshettyacademy.com/getCourse.php");
+		System.out.println("response is : "+rs.asString());
+		driver.quit();
+	}
+
+}

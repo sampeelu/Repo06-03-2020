@@ -20,13 +20,14 @@ public class UniqueCharInStr {
 		//	uniquech("saambha");
 		//	System.out.println();
 
-			printDistinct(str);
+		//	printDistinct(str);
 		//	uniqueCharacters("samsaymmkm");
 
 		//mapString(str);
 
 		//removeduplicate("dskkill");
 		//removeduplicateOtherWay("dskkilaaiil");
+		uniqueInt();
 
 	}
 
@@ -109,7 +110,7 @@ public class UniqueCharInStr {
 		for (i = 0; i < n; i++) 
 			if (count[(int)str.charAt(i)] > 1){ 
 				System.out.print(str.charAt(i));
-				System.out.println();
+				System.out.println("...............");
 				str.replace(String.valueOf(str.charAt(i)),"");
 				System.out.println(str);
 
@@ -212,5 +213,25 @@ public class UniqueCharInStr {
 
 
 	}
-
+/**
+ * remove duplicate of int arr
+ */
+	public static void uniqueInt() {
+		int arr[] = {2,2,3,5,5,4,4};
+		
+		HashMap<Integer,Integer> m = new HashMap<Integer,Integer>();
+		for(int i=0;i<arr.length;i++){
+			
+			if(m.containsKey(arr[i]))
+				m.put(arr[i],m.get(arr[i])+1);
+			else
+				m.put(arr[i],1);
+			}
+		System.out.println("this is origin integer in map: "+m);
+		for (Map.Entry<Integer,Integer> amp : m.entrySet()) {
+			if(amp.getValue()==1)
+				System.out.println(amp.getKey());
+		} 
+	}
+	
 }
